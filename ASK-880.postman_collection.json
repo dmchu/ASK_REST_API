@@ -1,0 +1,505 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ASK-880",
+		"_postman_id": "da216db5-2b08-320f-1679-d09a1996b41c",
+		"description": "Rest api testing of ASK application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST sign-up new user ",
+			"request": {
+				"url": "{{URL}}/sign-up",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"john.smith3@yopmail.com\",\n  \"name\": \"John Smith\",\n  \"password\": \"Internship123\"\n}"
+				},
+				"description": "ASK-134"
+			},
+			"response": []
+		},
+		{
+			"name": "GET activate new user",
+			"request": {
+				"url": "{{URL}}/activate/951/be66c53931bdfc7aca80f9aa60d9e5f243af6a10",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST sign in user",
+			"request": {
+				"url": "{{URL}}/sign-in",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"john.smith3@yopmail.com\",\n\t\"password\": \"Internship123\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST restore password",
+			"request": {
+				"url": "{{URL}}forgot-password",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"john.smith3@yopmail.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST reset password",
+			"request": {
+				"url": "{{URL}}/reset-password/951/ae8d3d04865fcb76c981d9866174de5809edec22",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"password\": \"Internship321\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET list of quizzes",
+			"request": {
+				"url": "{{URL}}/quizzes",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW5hLmtvcm9sZXZpY2hAeW9wbWFpbC5jb20iLCJpYXQiOjE1NDA5MzcyOTEsImV4cCI6MTU0MTAyMzY5MX0.nnMqH7R9f_SXjqQkOn2-DuHnOxvxgru4IqdPIQV4Fe4",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST create quizz",
+			"request": {
+				"url": "{{URL}}/quiz",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW5hLmtvcm9sZXZpY2hAeW9wbWFpbC5jb20iLCJpYXQiOjE1NDA5MzcyOTEsImV4cCI6MTU0MTAyMzY5MX0.nnMqH7R9f_SXjqQkOn2-DuHnOxvxgru4IqdPIQV4Fe4",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Test Quiz 10/30/2018\",\n  \"totalScore\": 18,\n  \"passingPercentage\": 75,\n  \"showStopperQuestion\": 1,\n  \"questions\": [\n    {\n      \"type\": \"TEXTUAL\",\n      \"question\": \"What is your name?\",\n      \"score\": 5\n    },\n    {\n      \"type\": \"SINGLE_CHOICE\",\n      \"question\": \"Which city is city largest in California?\",\n      \"score\": 7,\n      \"answer\": 2,\n      \"hasOtherOption\": false,\n      \"options\": [\n        \"San Francisco\",\n        \"Sacramento\",\n        \"Los Angeles\",\n        \"Redding\"\n      ]\n    },\n    {\n      \"type\": \"MULTIPLE_CHOICE\",\n      \"question\": \"Who was apple founded by?\",\n      \"score\": 6,\n      \"answers\": [\n        0,\n        1,\n        2\n      ],\n      \"hasOtherOption\": true,\n      \"options\": [\n        \"Steve Jobs\",\n        \"Steve Wozniak\",\n        \"Ronald Wayne\",\n        \"Ronald Reagan\"\n      ]\n    }\n  ]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT update quizz",
+			"request": {
+				"url": "{{URL}}/quiz",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW5hLmtvcm9sZXZpY2hAeW9wbWFpbC5jb20iLCJpYXQiOjE1NDA5Mzk1MTUsImV4cCI6MTU0MTAyNTkxNX0.JR-XK-Z9QqgDUv7H4-rqw9BYDjyv6Uf-7EavRgxXodA",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Test Quiz 10/30/2018\",\n  \"totalScore\": 18,\n  \"passingPercentage\": 75,\n  \"showStopperQuestion\": 1,\n  \"questions\": [\n    {\n      \"type\": \"TEXTUAL\",\n      \"question\": \"What is your name?\",\n      \"score\": 5\n    },\n    {\n      \"type\": \"SINGLE_CHOICE\",\n      \"question\": \"Which city is city largest in California?\",\n      \"score\": 7,\n      \"answer\": 2,\n      \"hasOtherOption\": false,\n      \"options\": [\n        \"San Francisco\",\n        \"Sacramento\",\n        \"Los Angeles\",\n        \"Redding\"\n      ]\n    },\n    {\n      \"type\": \"MULTIPLE_CHOICE\",\n      \"question\": \"Who was apple founded by?\",\n      \"score\": 6,\n      \"answers\": [\n        0,\n        1,\n        2\n      ],\n      \"hasOtherOption\": true,\n      \"options\": [\n        \"Steve Jobs\",\n        \"Steve Wozniak\",\n        \"Ronald Wayne\",\n        \"Ronald Reagan\"\n      ]\n    }\n  ],\n  \"id\": 2003\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Quizz",
+			"request": {
+				"url": "{{URL}}/quiz/2003",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW5hLmtvcm9sZXZpY2hAeW9wbWFpbC5jb20iLCJpYXQiOjE1NDA5Mzk1MTUsImV4cCI6MTU0MTAyNTkxNX0.JR-XK-Z9QqgDUv7H4-rqw9BYDjyv6Uf-7EavRgxXodA",
+						"description": ""
+					},
+					{
+						"key": "i",
+						"value": "",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET list of users",
+			"request": {
+				"url": "{{URL}}/users",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW5hLmtvcm9sZXZpY2hAeW9wbWFpbC5jb20iLCJpYXQiOjE1NDA5NDE2MDIsImV4cCI6MTU0MTAyODAwMn0.lc6EsSXzq9a5rJA3xSD4c8XmtCefvnmEA1Rk4C906Gs",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT change users name",
+			"request": {
+				"url": "{{URL}}/users/change-name/953",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW5hLmtvcm9sZXZpY2hAeW9wbWFpbC5jb20iLCJpYXQiOjE1NDA5NDE2MDIsImV4cCI6MTU0MTAyODAwMn0.lc6EsSXzq9a5rJA3xSD4c8XmtCefvnmEA1Rk4C906Gs",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Oxana Ivanova\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT change users group",
+			"request": {
+				"url": "{{URL}}/users/change-group/953",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW5hLmtvcm9sZXZpY2hAeW9wbWFpbC5jb20iLCJpYXQiOjE1NDA5NDE2MDIsImV4cCI6MTU0MTAyODAwMn0.lc6EsSXzq9a5rJA3xSD4c8XmtCefvnmEA1Rk4C906Gs",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"group\": \"A001\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT change users role",
+			"request": {
+				"url": "{{URL}}/users/change-role/953",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW5hLmtvcm9sZXZpY2hAeW9wbWFpbC5jb20iLCJpYXQiOjE1NDA5NDE2MDIsImV4cCI6MTU0MTAyODAwMn0.lc6EsSXzq9a5rJA3xSD4c8XmtCefvnmEA1Rk4C906Gs",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"role\":\"TEACHER\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE user",
+			"request": {
+				"url": "{{URL}}/users/953",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW5hLmtvcm9sZXZpY2hAeW9wbWFpbC5jb20iLCJpYXQiOjE1NDA5NDE2MDIsImV4cCI6MTU0MTAyODAwMn0.lc6EsSXzq9a5rJA3xSD4c8XmtCefvnmEA1Rk4C906Gs",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET list of my assignments (STUDENT)",
+			"request": {
+				"url": "{{URL}}/my-assignments",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uc21pdGgzQHlvcG1haWwuY29tIiwiaWF0IjoxNTQwOTk4MjE0LCJleHAiOjE1NDEwODQ2MTR9.TVAa7kIfmlIted0x-mPRjdlGvyzFAXQ4RNxrZTzrDP4",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST submit assignment (STUDENT)",
+			"request": {
+				"url": "{{URL}}/submit-assignment",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uc21pdGgzQHlvcG1haWwuY29tIiwiaWF0IjoxNTQwOTk4MjE0LCJleHAiOjE1NDEwODQ2MTR9.TVAa7kIfmlIted0x-mPRjdlGvyzFAXQ4RNxrZTzrDP4",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"assignmentId\":4539,\n\t\"answers\":[\n\t{\"textAnswer\":\"Test answer\"},\n\t{\"textAnswer\":\"Test answer\"}]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET my grades (STUDENT)",
+			"request": {
+				"url": "{{URL}}/my-grades",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uc21pdGgzQHlvcG1haWwuY29tIiwiaWF0IjoxNTQwOTk4MjE0LCJleHAiOjE1NDEwODQ2MTR9.TVAa7kIfmlIted0x-mPRjdlGvyzFAXQ4RNxrZTzrDP4",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST change users name (ALL)",
+			"request": {
+				"url": "{{URL}}/settings/change-name",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uc21pdGgzQHlvcG1haWwuY29tIiwiaWF0IjoxNTQwOTk4MjE0LCJleHAiOjE1NDEwODQ2MTR9.TVAa7kIfmlIted0x-mPRjdlGvyzFAXQ4RNxrZTzrDP4",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"newName\": \"Jonny\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST change password (ALL)",
+			"request": {
+				"url": "{{URL}}/settings/change-password",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uc21pdGgzQHlvcG1haWwuY29tIiwiaWF0IjoxNTQwOTk4MjE0LCJleHAiOjE1NDEwODQ2MTR9.TVAa7kIfmlIted0x-mPRjdlGvyzFAXQ4RNxrZTzrDP4",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"password\": \"Internship321\",\n\t\"newPassword\": \"internship123\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET list of assignments (TEACHER)",
+			"request": {
+				"url": "{{URL}}/assignments",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW5hLmtvcm9sZXZpY2hAeW9wbWFpbC5jb20iLCJpYXQiOjE1NDEwMDE4NTQsImV4cCI6MTU0MTA4ODI1NH0.dTXQaWFfSwK5TxWU1cHdAgT4yHdOIoPjXPErVPh__TU",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST create new assignment",
+			"request": {
+				"url": "{{URL}}/assignment",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW5hLmtvcm9sZXZpY2hAeW9wbWFpbC5jb20iLCJpYXQiOjE1NDEwMDE4NTQsImV4cCI6MTU0MTA4ODI1NH0.dTXQaWFfSwK5TxWU1cHdAgT4yHdOIoPjXPErVPh__TU",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"quizId\": 1279,\n  \"userIds\": [951]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT grade assignment",
+			"request": {
+				"url": "{{URL}}/assignment/4541",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW5hLmtvcm9sZXZpY2hAeW9wbWFpbC5jb20iLCJpYXQiOjE1NDEwMDE4NTQsImV4cCI6MTU0MTA4ODI1NH0.dTXQaWFfSwK5TxWU1cHdAgT4yHdOIoPjXPErVPh__TU",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"summary\": \"Summary from teacher\",\n  \"result\": \"PASSED\",\n  \"grades\": [\n    {\n      \"comment\": \"Teacher comment\",\n      \"additionalScore\": 5\n    }\n  ]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE assignment",
+			"request": {
+				"url": "{{URL}}/assignment/4541",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW5hLmtvcm9sZXZpY2hAeW9wbWFpbC5jb20iLCJpYXQiOjE1NDEwMDE4NTQsImV4cCI6MTU0MTA4ODI1NH0.dTXQaWFfSwK5TxWU1cHdAgT4yHdOIoPjXPErVPh__TU",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
